@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static './css/projects/project-index.css' %}"/>
+{% endblock %} 
+{% block content %}
+
+<section class="page-header">
+    <h1>Project List</h1>
+</section>
+
+<section class="card-container">
+    {% for project in projects %}
+        <div class="card">
+            <div class="card-cont">
+                <div class="card-img-cont">
+                </div>
+                <h2 class="card-title">{{ project.name }}</h2>
+                <h2 class="status">Project Status {{ project.staus }}</h2>
+                <p>{{ project.desc }}</p>
+                <p><small>{{ project.lang }}</small></p>
+                <p><small>{{ project.start }}</small></p>
+            </div>
+        </div>
+    {% endfor %}
+</section>
+
+{% endblock %}
